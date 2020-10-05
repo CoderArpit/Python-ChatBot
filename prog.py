@@ -3,8 +3,11 @@ import sys
 import pyttsx3
 import random
 import subprocess
-print("Hello User")
-pyttsx3.speak("Hello User")
+print("Enter a name so I can greet you : ") #Added a username input to broaden service
+pyttsx.speak("Enter a name so I can greet you ")
+name = str(input())
+print("Hello, ", name)
+pyttsx3.speak("Hello", name)
 while True:
     pyttsx3.speak("How can I help you:")
     user=input("How can I help you:")
@@ -17,7 +20,7 @@ while True:
                 check = subprocess.Popen(q, stderr = subprocess.STDOUT, shell=True)
             except Exception as e:
                 #s,ss = check.communicate()
-                pyttsx3.speak("Sorry user . Check whether google chrome is installed or not in your system. If it installed check the requirements are satisfied..!")            #stdout,stderr = check.communicate()
+                pyttsx3.speak("Sorry", name "Check whether google chrome is installed or not in your system. If it installed check the requirements are satisfied..!")            #stdout,stderr = check.communicate()
         elif sys.platform == "darwin":
             q = 'open -a \"Google Chrome\"' + 'www.google.com/search?q=' + site   
             try:
